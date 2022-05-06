@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yash Wankar">
+    <link rel="stylesheet" href="styles/mainstyle.css">
+    <title>Certificate Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/forExport.js"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/logo.png" alt="logo">
+        <button>Create</button>
+        <button>Verify</button>
+        <button>Help and Support</button>        
+    </div>
+    <div class="procedure">
+        <ol class="procedure-items">
+            <li onclick="expandProcedureItems(0)">Select Design</li>
+            <li onclick="expandProcedureItems(1)">Personalize</li>
+            <li onclick="expandProcedureItems(2)">Preview</li>
+            <li onclick="expandProcedureItems(3)">Download</li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="left-bar">
+            <div class="designs">
+                Customize
+                <p>Select from templates below:</p>
+                <ul class="cert-formats">
+                    <li id="des1" onclick="changeCertBg(1)">
+                        <img src="./assets/formats/des_1.png" alt="">
+                        <p>1</p>
+                    </li>
+                    <li id="des2" onclick="changeCertBg(2)">
+                        <img src="./assets/formats/des_2.png" alt="">
+                        <p>2</p>
+                    </li>
+                    <li id="des3" onclick="changeCertBg(3)">
+                        <img src="./assets/formats/des_3.png" alt="">
+                        <p>3</p>
+                    </li>
+                    <li id="des4" onclick="changeCertBg(4)">
+                        <img src="./assets/formats/des_4.png" alt="">
+                        <p>4</p>
+                    </li>
+                </ul>
+                <button class="next" onclick="expandProcedureItems(1)">Next</button>
+            </div>
+
+            <div class="personalize">
+                perso
+                <div class="perso-items" id="perso-items-title" onchange="persoStyle('perso-items-title', 'title')">
+                    <p class="perso-title">Title:-</p>
+                    <p>Font:</p>
+                    <select name="perso-font" id="perso-title-font" onchange="">
+                        <option value="Ariel" selected="selected">Ariel</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="sans-serif">Sans-serif</option>
+                        <option value="Lucida Console MS">Lucida Console MS</option>
+                    </select>
+                    <p>Color:</p>
+                    <input type="color" id="perso-title-color">
+                    <p>Size:</p>
+                    <input type="number" min="1" max="500" step="5">
+                    <p>Position:</p>
+                    <input type="number" min="0" max="1000"  step="10">
+                    <input type="number" min="0" max="1000"  step="10">
+                </div>
+                <div class="perso-items" id="perso-items-action" onchange="persoStyle('perso-items-action', 'action')">
+                    <p class="perso-title">Action:-</p>
+                    <p>Font:</p>
+                    <select name="perso-font" id="perso-font" onchange="">
+                        <option value="Ariel" selected="selected">Ariel</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="sans-serif">Sans-serif</option>
+                        <option value="Lucida Console MS">Lucida Console MS</option>
+                    </select>
+                    <p>Color:</p>
+                    <input type="color">
+                    <p>Size:</p>
+                    <input type="number" min="1" max="500" step="5">
+                    <p>Position:</p>
+                    <input type="number" min="0" max="1000" step="10">
+                    <input type="number" min="0" max="1000" step="10">
+                </div>
+                <div class="perso-items" id="perso-items-receiver" onchange="persoStyle('perso-items-receiver', 'receiver')">
+                    <p class="perso-title">Receiver:-</p>
+                    <p>Font:</p>
+                    <select name="perso-font" id="perso-font" onchange="">
+                        <option value="Ariel" selected="selected">Ariel</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="sans-serif">Sans-serif</option>
+                        <option value="Lucida Console MS">Lucida Console MS</option>
+                    </select>
+                    <p>Color:</p>
+                    <input type="color">
+                    <p>Size:</p>
+                    <input type="number" min="1" max="500" step="5">
+                    <p>Position:</p>
+                    <input type="number" min="0" max="1000" step="10">
+                    <input type="number" min="0" max="1000" step="10">
+                </div>
+                <div class="perso-items" id="perso-items-reason" onchange="persoStyle('perso-items-reason', 'reason')">
+                    <p class="perso-title">Reason:-</p>
+                    <p>Font:</p>
+                    <select name="perso-font" id="perso-font" onchange="">
+                        <option value="Ariel" selected="selected">Ariel</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="sans-serif">Sans-serif</option>
+                        <option value="Lucida Console MS">Lucida Console MS</option>
+                    </select>
+                    <p>Color:</p>
+                    <input type="color">
+                    <p>Size:</p>
+                    <input type="number" min="1" max="500" step="5">
+                    <p>Position:</p>
+                    <input type="number" min="0" max="1000" step="10">
+                    <input type="number" min="0" max="1000" step="10">
+                </div>
+                <div class="perso-items" id="perso-items-date" onchange="persoStyle('perso-items-date', 'date')">
+                    <p class="perso-title">Date:-</p>
+                    <p>Font:</p>
+                    <select name="perso-font" id="perso-font" onchange="">
+                        <option value="Ariel" selected="selected">Ariel</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="sans-serif">Sans-serif</option>
+                        <option value="Lucida Console MS">Lucida Console MS</option>
+                    </select>
+                    <p>Color:</p>
+                    <input type="color">
+                    <p>Size:</p>
+                    <input type="number" min="1" max="500" step="5">
+                    <p>Position:</p>
+                    <input type="number" min="0" max="1000" step="10">
+                    <input type="number" min="0" max="1000" step="10">
+                </div>
+
+                <button class="next" onclick="expandProcedureItems(0)">Previous</button>
+                <button class="next" onclick="expandProcedureItems(2)">Next</button>
+            </div>
+
+            <div class="preview">
+                pre
+                <button class="next" onclick="expandProcedureItems(1)">Previous</button>
+                <button class="next" onclick="expandProcedureItems(3)">Next</button>
+            </div>
+
+            <div class="download">
+                down
+                <button class="next" onclick="generatePDF()">Download</button>
+            </div>
+        </div>
+
+        <div class="certi">
+            Preview
+            <div class="frame" id="certificate">
+                <input type="text" name="" id="hashvalue" placeholder="#" value="123456">
+                <input type="text" name="" id="title" placeholder="title" value="Certificate">
+                <input type="text" name="" id="action" placeholder="action" value="for outstanding performance">
+                <input type="text" name="" id="receiver" placeholder="receiver" value="Myash">
+                <textarea type="textarea" name="" id="reason" placeholder="reason" value="has successfully completed the training"></textarea>     
+                <input type="text" name="" id="date" placeholder="date" value="DD-MM-YYYY">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Made with ❤️ by Yash Wankar </p>
+        <p>Certificate Generator 2022 © </p>
+    </div>
+    <script src="./scripts/mainscript.js"></script>
+</body>
+</html>

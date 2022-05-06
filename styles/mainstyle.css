@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, html{
+    background-color: #181a1b;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    background-image: linear-gradient(-60deg, rgba(0, 0, 0, 0), rgb(8, 148, 166) 14%, rgb(73, 20, 167) 28%, rgb(8, 148, 166) 84%, rgba(0, 157, 163, 0));
+    background-color: initial;
+    font-weight: bold;
+}
+
+.header p{
+    padding: 10px;
+}
+.header button{
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 10px;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.header button:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.procedure{
+    background-image: linear-gradient(45deg,Blue, lightGreen, lightBlue);
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+.procedure-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 40px;
+    padding: 10px;
+    
+}
+.procedure-items li{
+    list-style: decimal;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.procedure-items li:hover{
+    background-color: rgba(0,0,0,0.2);
+    font-style: italic;
+}
+
+/* main */
+.main{
+    display: grid;
+    grid-template-columns: 40% auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    height: 80%;
+}
+.left-bar{
+    position: relative;
+}
+.designs, .personalize, .preview, .download{
+    /* border: 1px solid gray; */
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
+}
+.next{
+    background-color: transparent;
+    border-color: white;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+.next:hover{
+    background-color: white;
+    color: black;
+    border-color: black;
+
+}
+
+.perso-items{
+    display: flex;
+    margin: 20px;
+    gap: 10px;
+}
+.perso-items .perso-title{
+    width: 100px;
+    text-align: left;
+}
+
+.perso-items p{
+    padding-top: 5px;
+}
+.perso-items select{
+    height: 25px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+}
+.perso-items option{
+    background-color: transparent;
+    color: black;
+}
+
+.align-icons img{
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+}
+.perso-items input{
+    height: 25px;
+    width: 50px;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    border-color: gray ;
+}
+
+
+
+
+
+.cert-formats{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.cert-formats li{
+    list-style-type: none;
+    padding: 20px;
+}
+.cert-formats img{
+    height: 200px;
+    width: 300px;
+}
+
+.certi{
+    /* border: 2px solid gray; */
+    color: gray;
+}
+.frame{
+    background-image: url("../assets/formats/1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 707px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+.frame input{
+    position: absolute;
+    padding: 10px;
+    margin: 5px;
+    max-width: 1000px;
+    max-height: 707px;
+    border-color: transparent;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.frame input:active{
+    border-color: transparent;
+    outline: none;
+}
+.frame textarea{
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    overflow: visible;
+}
+
+.frame #hashvalue{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+
+
+
+/* footer */
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+    background-image: linear-gradient(-60deg, rgba(0, 0, 0, 0), rgb(8, 148, 166) 14%, rgb(73, 20, 167) 28%, rgb(8, 148, 166) 84%, rgba(0, 157, 163, 0));
+    font-weight: bold;
+}
+.footer p{
+    padding:8px;
+}
