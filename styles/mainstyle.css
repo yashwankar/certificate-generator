@@ -67,14 +67,15 @@ body, html{
 /* main */
 .main{
     display: grid;
-    grid-template-columns: 40% auto;
-    margin: 10px;
-    padding: 10px;
+    grid-template-columns: 43% auto;
+    margin: 5px;
+    padding: 5px;
     text-align: center;
     height: 80%;
 }
 .left-bar{
     position: relative;
+    
 }
 .designs, .personalize, .preview, .download{
     /* border: 1px solid gray; */
@@ -89,6 +90,8 @@ body, html{
     color: white;
     padding: 10px;
     font-weight: bold;
+    margin: 10px;
+    margin-top: 100px;
 }
 .next:hover{
     background-color: white;
@@ -112,6 +115,7 @@ body, html{
 }
 .perso-items select{
     height: 25px;
+    width: 150px;
     border-radius: 5px;
     background-color: transparent;
     color: white;
@@ -136,6 +140,15 @@ body, html{
 }
 
 
+/* preview */
+.preview button{
+    padding: 5px;
+    border-radius: 5px;
+}
+.additional-text{
+    padding: 5px;
+    margin: 3px;
+}
 
 
 
@@ -155,6 +168,7 @@ body, html{
 .certi{
     /* border: 2px solid gray; */
     color: gray;
+    /* margin-left: 50px; */
 }
 .frame{
     background-image: url("../assets/formats/1.png");

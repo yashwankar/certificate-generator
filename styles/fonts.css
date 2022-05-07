@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Ballet:opsz@16..72&family=BhuTuka+Expanded+One&family=Chela+One&family=Combo&family=Comfortaa&family=Dancing+Script&family=Gloria+Hallelujah&family=Great+Vibes&family=Henny+Penny&family=Kaushan+Script&family=Luckiest+Guy&family=My+Soul&family=Oleo+Script+Swash+Caps&family=Pacifico&family=Parisienne&family=Poiret+One&family=Rubik+Puddles&family=Sacramento&family=Satisfy&family=Shadows+Into+Light&family=Vampiro+One&family=Yellowtail&display=swap');
+
+.changeFont{
+    font-family: 'Alex Brush', cursive;
+    font-family: 'Ballet', cursive;
+    font-family: 'BhuTuka Expanded One', cursive;
+    font-family: 'Chela One', cursive;
+    font-family: 'Combo', cursive;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Henny Penny', cursive;
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Luckiest Guy', cursive;
+    font-family: 'My Soul', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Parisienne', cursive;
+    font-family: 'Poiret One', cursive;
+    font-family: 'Rubik Puddles', cursive;
+    font-family: 'Sacramento', cursive;
+    font-family: 'Satisfy', cursive;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Vampiro One', cursive;
+    font-family: 'Yellowtail', cursive;
+}
