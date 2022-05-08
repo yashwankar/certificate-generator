@@ -209,7 +209,28 @@ body, html{
     bottom: 10px;
     left: 0;
 }
-
+#title{
+    left: 350px;
+    bottom: 540px;
+}
+#action{
+    left: 330px;
+    bottom: 500px;
+    width: 100%;
+}
+#receiver{
+    left: 390px;
+    bottom: 290px;
+}
+#reason{
+    position: absolute;
+    left: 280px;
+    bottom: 240px;
+}
+#date{
+    left: 180px;
+    bottom: 90px;
+}
 
 
 /* footer */
