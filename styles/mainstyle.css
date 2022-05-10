@@ -21,7 +21,10 @@ body, html{
     background-color: initial;
     font-weight: bold;
 }
-
+.header img{
+    width: 50px;
+    height: 50px;
+}
 .header p{
     padding: 10px;
 }
@@ -149,7 +152,26 @@ body, html{
     padding: 5px;
     margin: 3px;
 }
+.additional-elements{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.additional-elements p{
+    padding: 5px;
+    margin: 5px;
+}
+.additional-elements input{
+    height: 25px;
+    margin: 5px;
+}
 
+.additionalText, .additionalImage{
+    height: 300px;
+    width: auto;
+    overflow: auto;
+
+}
 
 
 .cert-formats{
@@ -216,11 +238,11 @@ body, html{
 #action{
     left: 330px;
     bottom: 500px;
-    width: 100%;
+    width: 60%;
 }
 #receiver{
-    left: 390px;
-    bottom: 290px;
+    left: 470px;
+    bottom: 310px;
 }
 #reason{
     position: absolute;

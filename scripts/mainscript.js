@@ -1,4 +1,5 @@
-
+let textCount = 1;
+let imgCount = 1;
 
 function changeCertBg(no){
     let frame = document.querySelector('.frame');
@@ -73,6 +74,17 @@ function persoStyle(a, b){
     dest.style.bottom = source.children[9].value+"px";
 }
 
+function persoImage(a, b){
+    let source = document.getElementById(a);
+    let dest = document.getElementById(b);
+    dest.style.position = 'absolute';
+    dest.style.height = source.children[1].value+"px";
+    dest.style.width = source.children[3].value+"px";
+    dest.style.borderRadius = source.children[5].value+"px";
+    dest.style.left = source.children[7].value+"px";
+    dest.style.bottom = source.children[8].value+"px";
+}
+
 
 function expandProcedureItems(index){
     items = document.querySelector('.left-bar').children;
@@ -93,11 +105,39 @@ function addTextListeners(){
     document.addEventListener("change", function(){
         for(let textNo=1; textNo < textCount; textNo++)
             persoStyle(`addText${textNo}`,`addTextToFrame${textNo}`);
-        console.log("added listener successfully");
+        // console.log("added listener text successfully");
+    });
+}
+    
+async function getBase64(element) {
+    var file = element.target.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function() {
+        console.log('RESULT', reader.result); //this is converted base64 data
+        return reader.result;
+    }
+}
+
+function addImageListeners(){
+    console.log(imgCount, 'imgCount');
+    for(let x=1; x<=imgCount; x++){
+        document.getElementById(`ImgPath${x}`).addEventListener("change", function(event){
+            document.getElementById(`frameImgPath${x}`).src = URL.createObjectURL(event.target.files[0]);
+            // let path = getBase64(event);
+            // console.log(path); //i need that reader.result here
+            // document.getElementById(`frameImgPath${x}`).src = path;
+        });
+    }
+
+    document.addEventListener("change", function(){
+        for(let imgNo=1; imgNo < imgCount; imgNo++){
+            persoImage(`addImg${imgNo}`,`frameImgPath${imgNo}`);
+        }
+        // console.log("added listener for img successfully");
     });
 }
 
-let textCount = 1;
 function additionalText(){
     console.log("working");
     let parent = document.querySelector('.additionalText');
@@ -116,9 +156,7 @@ function additionalText(){
 
     element.appendChild(title);
     element.appendChild(inp);
-    element.style.display = 'flex';
-    element.style.padding = '5pxpx';
-    element.style.justifyContent = 'center';
+    element.className = 'additional-elements';
     parent.appendChild(element);
 
     let choices = document.createElement('div');
@@ -181,15 +219,21 @@ function additionalText(){
     newInput.id = `addTextToFrame${textCount}`;
 
     document.getElementById("certificate").appendChild(newInput); 
+    addTextListeners();
     textCount++;
 }
 
-let imgCount = 1;
+// var onFileSelected = function(event, fileId) {
+//     console.log(fileId);
+//     var image = document.getElementById(`frame${fileId}`);
+//     image.src = URL.createObjectURL(event.target.files[0]);
+// };
+
 function additionalImage(){
     let parent = document.querySelector('.additionalImage');
 
     let element = document.createElement('div');
-    element.className = 'addional-image-element';
+    element.className = 'additional-elements';
 
     let title = document.createElement('p');
     title.innerHTML = `Image-${imgCount} :- `;
@@ -198,17 +242,78 @@ function additionalImage(){
 
     let inp = document.createElement('input');
     inp.type = 'file';
+    inp.style.paddingTop = '10px';
     inp.className = 'additional-image';
     inp.placeholder = 'Type text here...';
-
+    inp.id = `ImgPath${imgCount}`;
 
     element.appendChild(title);
     element.appendChild(inp);
-    
     parent.appendChild(element);
+    
+    element = document.createElement('div');
+    element.className = 'additional-elements';
+    element.id = `addImg${imgCount}`
+
+    // height width border-radius position x y
+    let x = document.createElement('p');
+    x.innerHTML = "Height:";
+    element.appendChild(x);
+
+    x = document.createElement("input");
+    x.type = 'number';
+    x.min = 0;
+    x.max = 1000;
+    element.appendChild(x);
+
+    x = document.createElement('p');
+    x.innerHTML = "Width:";
+    element.appendChild(x);
+
+    x = document.createElement("input");
+    x.type = 'number';
+    x.min = 0;
+    x.max = 1000;
+    element.appendChild(x);
+
+    x = document.createElement('p');
+    x.innerHTML = "Border-Radius:";
+    element.appendChild(x);
+
+    x = document.createElement("input");
+    x.type = 'number';
+    x.min = 0;
+    x.max = 1000;
+    element.appendChild(x);
+
+    x = document.createElement('p');
+    x.innerHTML = "Position:";
+    element.appendChild(x);
+
+    x = document.createElement("input");
+    x.type = 'number';
+    x.min = 0;
+    x.max = 1000;
+    element.appendChild(x);
+
+    x = document.createElement("input");
+    x.type = 'number';
+    x.min = 0;
+    x.max = 1000;
+    element.appendChild(x);
+
+    parent.appendChild(element);
+
+    let newImage = document.createElement('img');
+    newImage.id = `frameImgPath${imgCount}`;
+    newImage.style.width = '200px'
+    // newImage.src = `imgPath${imgCount}`;
+
+    document.getElementById("certificate").appendChild(newImage); 
+    addImageListeners();
+    imgCount++;
 }
 
 addFontSelectOptions(".personalize");
-addTextListeners();
 document.getElementById("addText").addEventListener("click", additionalText);
 document.getElementById("addImage").addEventListener("click", additionalImage);
