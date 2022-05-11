@@ -108,26 +108,38 @@ function addTextListeners(){
         // console.log("added listener text successfully");
     });
 }
-    
-async function getBase64(element) {
-    var file = element.target.files[0];
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = function() {
-        console.log('RESULT', reader.result); //this is converted base64 data
-        return reader.result;
+const readUploadedFileAsText = (inputFile) => {
+    const temporaryFileReader = new FileReader();
+  
+    return new Promise((resolve, reject) => {
+      temporaryFileReader.onerror = () => {
+        temporaryFileReader.abort();
+        reject(new DOMException("Problem parsing input file."));
+      };
+  
+      temporaryFileReader.onload = () => {
+        resolve(temporaryFileReader.result);
+      };
+      temporaryFileReader.readAsDataURL(inputFile);
+    });
+};
+const getBase64 = async (event) => {
+    // console.log(event,event.target.id, 'inside base64 func');
+    const file = event.target.files[0];
+    const fileContent = document.getElementById(`frame${event.target.id}`);
+
+    try {
+      const fileContents = await readUploadedFileAsText(file)  
+      fileContent.src = fileContents
+    } catch (e) {
+      fileContent.src = e.message
     }
 }
 
 function addImageListeners(){
     console.log(imgCount, 'imgCount');
     for(let x=1; x<=imgCount; x++){
-        document.getElementById(`ImgPath${x}`).addEventListener("change", function(event){
-            document.getElementById(`frameImgPath${x}`).src = URL.createObjectURL(event.target.files[0]);
-            // let path = getBase64(event);
-            // console.log(path); //i need that reader.result here
-            // document.getElementById(`frameImgPath${x}`).src = path;
-        });
+        document.getElementById(`ImgPath${x}`).addEventListener("change", getBase64);
     }
 
     document.addEventListener("change", function(){
