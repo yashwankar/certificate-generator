@@ -7,6 +7,7 @@ function changeCertBg(no){
     frame.style.backgroundRepeat="no-repeat";
     frame.style.backgroundSize="cover";
     document.getElementById("certificate").style.visibility = 'visible';
+    certInit(no);
 }
 
 function addFontSelectOptions(cls){
@@ -162,7 +163,75 @@ function setCredentialId(){
 setCredentialId();
 
 function certInit(index){
-    
+    index -= 1;
+    let data = [
+        [
+            ['Cinzel Decorative', '#000000', 60, 310, 540],
+            ['Press Start 2P', '#000000', 30, 290, 470],
+            ['Sacramento', '#DAC01B', 95, 380, 300],
+            ['Arial', '#000000', 25, 300, 170],
+            ['Arial', '#000000', 15, 210, 90]
+        ],
+        
+        [
+            ['Cinzel Decorative', '#29A9E1', 60, 390, 540],
+            ['Press Start 2P', '#FFFFFF', 30, 360, 470],
+            ['Sacramento', '#DAC01B', 95, 450, 300],
+            ['Arial', '#FFFFFF', 25, 380, 160],
+            ['Arial', '#FFFFFF', 15, 770, 90]
+        ],
+        
+        [
+            ['Special Elite', '#000000', 60, 320, 540],
+            ['Press Start 2P', '#000000', 30, 280, 470],
+            ['Water Brush', '#000000', 95, 380, 300],
+            ['Averia Serif Libre', '#000000', 25, 310, 170],
+            ['Arial', '#000000', 15, 220, 110]
+        ],
+        
+        [
+            ['Luckiest Guy', '#0E7CED', 60, 330, 540],
+            ['Press Start 2P', '#000000', 30, 330, 470],
+            ['Water Brush', '#0E7CED', 95, 330, 300],
+            ['Averia Serif Libre', '#000000', 25, 340, 150],
+            ['Arial', '#000000', 15, 330, 80]
+        ]
+    ];
+
+    let title = document.getElementById('title');
+    let action = document.getElementById('action');
+    let receiver = document.getElementById('receiver');
+    let reason = document.getElementById('reason');
+    let date = document.getElementById('date');
+
+    let elements = [title, action, receiver, reason, date];
+    for(let item=0; item<5; item++){
+        elements[item].style.fontFamily = data[index][item][0];
+        elements[item].style.color = data[index][item][1];
+        elements[item].style.fontSize = data[index][item][2]+"px";
+        elements[item].style.left = data[index][item][3]+"px";
+        elements[item].style.bottom = data[index][item][4]+"px";
+    }
+    title.style.fontWeight = 'bold';
+    reason.style.justifyContent = 'center';
+    console.log('done');
+
+    title = document.getElementById('perso-items-title').children;
+    action = document.getElementById('perso-items-action').children;
+    receiver = document.getElementById('perso-items-receiver').children;
+    reason = document.getElementById('perso-items-reason').children;
+    date = document.getElementById('perso-items-date').children;
+
+    elements = [title, action, receiver, reason, date];
+    for(let item=0; item<5; item++){
+        elements[item][2].value = data[index][item][0];
+        elements[item][4].value = data[index][item][1];
+        elements[item][6].value = data[index][item][2];
+        elements[item][8].value = data[index][item][3];
+        elements[item][9].value = data[index][item][4];
+    }
+    console.log('again done');
+
 }
 function addTextListeners(){
     document.addEventListener("change", function(){
