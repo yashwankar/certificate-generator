@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Yash Wankar">
+    <link rel="icon" href="./assets/favicon.png">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/mainstyle.css">
     <title>Certificate Generator</title>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./scripts/forExport.js"></script>
 </head>
 <body>
@@ -156,7 +153,6 @@
                 <p>Download</p>
                 <div>
                     <button class="next" onclick="generatePDF()" >Download PDF</button>
-                    <button class="next" onclick="generateImage()" >Download Image</button>
                 </div>
             </div>
         </div>
@@ -164,11 +160,11 @@
         <div class="certi">
             Preview
             <div class="frame" id="certificate">
-                <input type="text" name="" id="hashvalue" placeholder="#" value="123456">
+                <input type="text" name="" id="hashvalue" placeholder="#" value="ID : 123456">
                 <input type="text" name="" id="title" placeholder="title" value="Certificate">
-                <input type="text" name="" id="action" placeholder="action" value="for outstanding performance">
+                <input type="text" name="" id="action" placeholder="action" value="This is to certify that">
                 <input type="text" name="" id="receiver" placeholder="receiver" value="Myash">
-                <textarea type="textarea" name="" id="reason" placeholder="reason" value="has successfully completed the training"></textarea>     
+                <textarea type="textarea" name="" id="reason" placeholder="reason" value="" rows="5" cols="300">has successfully completed the for the skill.</textarea>     
                 <input type="text" name="" id="date" placeholder="date" value="DD-MM-YYYY">
             </div>
         </div>

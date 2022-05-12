@@ -3,7 +3,7 @@ let imgCount = 1;
 
 function changeCertBg(no){
     let frame = document.querySelector('.frame');
-    frame.style.background=`url('./assets/formats/${no}.png')`;
+    frame.style.background=`url('./assets/layouts/${no}.png')`;
     frame.style.backgroundRepeat="no-repeat";
     frame.style.backgroundSize="cover";
 }
@@ -97,6 +97,30 @@ function expandProcedureItems(index){
         }
     }
 }
+function setDate(){
+    let today = new Date();
+    let yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1;
+    let dd = today.getDate();
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+
+    today = dd + '-' + mm + '-' + yyyy;
+    document.getElementById('date').value = today;
+}
+setDate();
+
+function setCredentialId(){
+    let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let txt = "";
+    for(let i=0; i<10; i++){
+        txt += letters.charAt(Math.floor(Math.random()*letters.length));
+    }
+    console.log(txt);
+    document.getElementById('hashvalue').value = "ID: " + txt; 
+}
+setCredentialId();
 
 function certInit(index){
     
@@ -137,7 +161,7 @@ const getBase64 = async (event) => {
 }
 
 function addImageListeners(){
-    console.log(imgCount, 'imgCount');
+    // console.log(imgCount, 'imgCount');
     for(let x=1; x<=imgCount; x++){
         document.getElementById(`ImgPath${x}`).addEventListener("change", getBase64);
     }
@@ -151,25 +175,25 @@ function addImageListeners(){
 }
 
 function additionalText(){
-    console.log("working");
+    // console.log("working");
     let parent = document.querySelector('.additionalText');
 
-    let element = document.createElement('div');
+    // let element = document.createElement('div');
 
-    let title = document.createElement('p');
-    title.innerHTML = `Text-${textCount} :- `;
-    title.className = 'perso-title';
-    title.style.padding = '10px 20px 0 0';
+    // let title = document.createElement('p');
+    // title.innerHTML = `Text-${textCount} :- `;
+    // title.className = 'perso-title';
+    // title.style.padding = '10px 20px 0 0';
 
-    let inp = document.createElement('input');
-    inp.type = 'text';
-    inp.className = 'additional-text';
-    inp.placeholder = 'Type text here...';
+    // let inp = document.createElement('input');
+    // inp.type = 'text';
+    // inp.className = 'additional-text';
+    // inp.placeholder = 'Type text here...';
 
-    element.appendChild(title);
-    element.appendChild(inp);
-    element.className = 'additional-elements';
-    parent.appendChild(element);
+    // element.appendChild(title);
+    // element.appendChild(inp);
+    // element.className = 'additional-elements';
+    // parent.appendChild(element);
 
     let choices = document.createElement('div');
     choices.className = 'perso-items';
