@@ -112,6 +112,7 @@ function persoStyle(a, b){
     dest.style.fontSize = source.children[6].value+"px";
     dest.style.left = source.children[8].value+"px";
     dest.style.bottom = source.children[9].value+"px";
+    dest.style.width = 1000-source.children[8].value + "px";
 }
 
 function persoImage(a, b){
@@ -169,7 +170,7 @@ function certInit(index){
             ['Cinzel Decorative', '#000000', 60, 310, 540],
             ['Press Start 2P', '#000000', 30, 290, 470],
             ['Sacramento', '#DAC01B', 95, 380, 300],
-            ['Arial', '#000000', 25, 300, 170],
+            ['Arial', '#000000', 25, 150, 250],
             ['Arial', '#000000', 15, 210, 90]
         ],
         
@@ -177,7 +178,7 @@ function certInit(index){
             ['Cinzel Decorative', '#29A9E1', 60, 390, 540],
             ['Press Start 2P', '#FFFFFF', 30, 360, 470],
             ['Sacramento', '#DAC01B', 95, 450, 300],
-            ['Arial', '#FFFFFF', 25, 380, 160],
+            ['Arial', '#FFFFFF', 25, 240, 250],
             ['Arial', '#FFFFFF', 15, 770, 90]
         ],
         
@@ -185,7 +186,7 @@ function certInit(index){
             ['Special Elite', '#000000', 60, 320, 540],
             ['Press Start 2P', '#000000', 30, 280, 470],
             ['Water Brush', '#000000', 95, 380, 300],
-            ['Averia Serif Libre', '#000000', 25, 310, 170],
+            ['Averia Serif Libre', '#000000', 25, 150, 250],
             ['Arial', '#000000', 15, 220, 110]
         ],
         
@@ -193,7 +194,7 @@ function certInit(index){
             ['Luckiest Guy', '#0E7CED', 60, 330, 540],
             ['Press Start 2P', '#000000', 30, 330, 470],
             ['Water Brush', '#0E7CED', 95, 330, 300],
-            ['Averia Serif Libre', '#000000', 25, 340, 150],
+            ['Averia Serif Libre', '#000000', 22, 330, 260],
             ['Arial', '#000000', 15, 330, 80]
         ]
     ];
@@ -210,11 +211,11 @@ function certInit(index){
         elements[item].style.color = data[index][item][1];
         elements[item].style.fontSize = data[index][item][2]+"px";
         elements[item].style.left = data[index][item][3]+"px";
+        elements[item].style.width = 1000-data[index][item][3]+"px";
         elements[item].style.bottom = data[index][item][4]+"px";
     }
     title.style.fontWeight = 'bold';
-    reason.style.justifyContent = 'center';
-    console.log('done');
+    // console.log('done');
 
     title = document.getElementById('perso-items-title').children;
     action = document.getElementById('perso-items-action').children;
@@ -230,7 +231,7 @@ function certInit(index){
         elements[item][8].value = data[index][item][3];
         elements[item][9].value = data[index][item][4];
     }
-    console.log('again done');
+    // console.log('again done');
 
 }
 function addTextListeners(){
@@ -285,24 +286,6 @@ function addImageListeners(){
 function additionalText(){
     // console.log("working");
     let parent = document.querySelector('.additionalText');
-
-    // let element = document.createElement('div');
-
-    // let title = document.createElement('p');
-    // title.innerHTML = `Text-${textCount} :- `;
-    // title.className = 'perso-title';
-    // title.style.padding = '10px 20px 0 0';
-
-    // let inp = document.createElement('input');
-    // inp.type = 'text';
-    // inp.className = 'additional-text';
-    // inp.placeholder = 'Type text here...';
-
-    // element.appendChild(title);
-    // element.appendChild(inp);
-    // element.className = 'additional-elements';
-    // parent.appendChild(element);
-
     let choices = document.createElement('div');
     choices.className = 'perso-items';
     choices.id = `addText${textCount}`;

@@ -1,9 +1,10 @@
 function generatePDF(){
     const element = document.getElementById("certificate");
     let opt = {
+        margin: -12,
         filename: "certificate.pdf",
         image: {quality:1},
-        jsPDF: {orientation: 'landscape'}
+        jsPDF: {orientation: 'landscape', unit: 'px', format: [1015, 723]}
     };
     html2pdf().set(opt).from(element).toPdf().save();
 }
