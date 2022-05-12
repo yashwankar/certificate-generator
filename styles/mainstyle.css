@@ -251,6 +251,7 @@ body, html{
     padding: 10px;
     margin: 10px;
     position: relative;
+    visibility: hidden;
 }
 
 .frame input{

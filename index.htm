@@ -39,8 +39,7 @@
     <div class="main">
         <div class="left-bar">
             <div class="designs">
-                Customize
-                <p>Select from templates below:</p>
+                <p>Select from a suitable template design</p>
                 <ul class="cert-formats">
                     <li id="des1" onclick="changeCertBg(1)">
                         <img src="./assets/formats/des_1.png" alt="">
@@ -63,18 +62,15 @@
             </div>
 
             <div class="personalize">
-                Personalize
+                <p>Personalize basic componets</p>
                 <div class="perso-items" id="perso-items-title" onchange="persoStyle('perso-items-title', 'title')">
                     <p class="perso-title">Title:-</p>
                     <p>Font:</p>
-                    <select name="perso-font" id="perso-title-font" onchange="">
-                        <option value="Arial" selected="selected">Arial</option>
-                        
-                    </select>
+                    <select name="perso-font" id="perso-title-font" onchange=""> </select>
                     <p>Color:</p>
                     <input type="color" id="perso-title-color">
                     <p>Size:</p>
-                    <input type="number" min="1" max="500" step="5">
+                    <input type="number" min="0" max="500" step="5">
                     <p>Position:</p>
                     <input type="number" min="0" max="1000"  step="10">
                     <input type="number" min="0" max="1000"  step="10">
@@ -82,14 +78,11 @@
                 <div class="perso-items" id="perso-items-action" onchange="persoStyle('perso-items-action', 'action')">
                     <p class="perso-title">Action:-</p>
                     <p>Font:</p>
-                    <select name="perso-font" id="perso-font" onchange="">
-                        <option value="Arial" selected="selected">Arial</option>
-                        
-                    </select>
+                    <select name="perso-font" id="perso-font" onchange=""> </select>
                     <p>Color:</p>
                     <input type="color">
                     <p>Size:</p>
-                    <input type="number" min="1" max="500" step="5">
+                    <input type="number" min="0" max="500" step="5">
                     <p>Position:</p>
                     <input type="number" min="0" max="1000" step="10">
                     <input type="number" min="0" max="1000" step="10">
@@ -97,14 +90,11 @@
                 <div class="perso-items" id="perso-items-receiver" onchange="persoStyle('perso-items-receiver', 'receiver')">
                     <p class="perso-title">Receiver:-</p>
                     <p>Font:</p>
-                    <select name="perso-font" id="perso-font" onchange="">
-                        <option value="Arial" selected="selected">Arial</option>
-                        
-                    </select>
+                    <select name="perso-font" id="perso-font" onchange=""> </select>
                     <p>Color:</p>
                     <input type="color">
                     <p>Size:</p>
-                    <input type="number" min="1" max="500" step="5">
+                    <input type="number" min="0" max="500" step="5">
                     <p>Position:</p>
                     <input type="number" min="0" max="1000" step="10">
                     <input type="number" min="0" max="1000" step="10">
@@ -112,14 +102,11 @@
                 <div class="perso-items" id="perso-items-reason" onchange="persoStyle('perso-items-reason', 'reason')">
                     <p class="perso-title">Reason:-</p>
                     <p>Font:</p>
-                    <select name="perso-font" id="perso-font" onchange="">
-                        <option value="Arial" selected="selected">Arial</option>
-                        
-                    </select>
+                    <select name="perso-font" id="perso-font" onchange=""> </select>
                     <p>Color:</p>
                     <input type="color">
                     <p>Size:</p>
-                    <input type="number" min="1" max="500" step="5">
+                    <input type="number" min="0" max="500" step="5">
                     <p>Position:</p>
                     <input type="number" min="0" max="1000" step="10">
                     <input type="number" min="0" max="1000" step="10">
@@ -127,14 +114,11 @@
                 <div class="perso-items" id="perso-items-date" onchange="persoStyle('perso-items-date', 'date')">
                     <p class="perso-title">Date:-</p>
                     <p>Font:</p>
-                    <select name="perso-font" id="perso-font" onchange="">
-                        <option value="Arial" selected="selected">Arial</option>
-                        
-                    </select>
+                    <select name="perso-font" id="perso-font" onchange=""> </select>
                     <p>Color:</p>
                     <input type="color">
                     <p>Size:</p>
-                    <input type="number" min="1" max="500" step="5">
+                    <input type="number" min="0" max="500" step="5">
                     <p>Position:</p>
                     <input type="number" min="0" max="1000" step="10">
                     <input type="number" min="0" max="1000" step="10">
@@ -146,7 +130,7 @@
             </div>
 
             <div class="preview">
-                <p>Preview</p>
+                <p>Add Custom Text and Images to Certificate</p>
                 <div>
                     <button id="addText" class="next">Add Text</button>
                     <button id="addImage" class="next">Add Image</button>
@@ -160,23 +144,21 @@
             </div>
 
             <div class="download">
-                <p>Download</p>
+                <p>Save the certificate in .PDF format</p>
                 <div>
                     <button class="next" onclick="generatePDF()" >Download PDF</button>
                 </div>
             </div>
         </div>
 
-        <div class="certi">
-            Certificate
-            <div class="frame" id="certificate">
-                <input type="text" name="" id="hashvalue" placeholder="#" value="ID : 123456">
-                <input type="text" name="" id="title" placeholder="title" value="Certificate">
-                <input type="text" name="" id="action" placeholder="action" value="This is to certify that">
-                <input type="text" name="" id="receiver" placeholder="receiver" value="Myash">
-                <textarea type="textarea" name="" id="reason" placeholder="reason" value="" rows="5" cols="100">has successfully completed the for the skill.</textarea>     
-                <input type="text" name="" id="date" placeholder="date" value="DD-MM-YYYY">
-            </div>
+        
+        <div class="frame" id="certificate">
+            <input type="text" name="" id="hashvalue" placeholder="#" value="ID : 123456">
+            <input type="text" name="" id="title" placeholder="title" value="Certificate">
+            <input type="text" name="" id="action" placeholder="action" value="This is to certify that">
+            <input type="text" name="" id="receiver" placeholder="receiver" value="Myash">
+            <textarea type="textarea" name="" id="reason" placeholder="reason" value="" rows="5" cols="100">has successfully completed the for the skill.</textarea>     
+            <input type="text" name="" id="date" placeholder="date" value="DD-MM-YYYY">
         </div>
 
     </div>

@@ -6,36 +6,75 @@ function changeCertBg(no){
     frame.style.background=`url('./assets/layouts/${no}.png')`;
     frame.style.backgroundRepeat="no-repeat";
     frame.style.backgroundSize="cover";
+    document.getElementById("certificate").style.visibility = 'visible';
 }
 
 function addFontSelectOptions(cls){
     let fontNames = [
-        'Alex Blush',
+        'Arial',
+        'Akronim', 
+        'Alex Brush', 
+        'Averia Serif Libre', 
+        'Babylonica', 
         'Ballet', 
+        'Bangers', 
         'BhuTuka Expanded One', 
+        'Bradley Hand ITC',
+        'Caveat Brush', 
         'Chela One', 
+        'Cherish', 
+        'Cinzel Decorative', 
         'Combo', 
         'Comfortaa', 
+        'Comic Sans MS',
         'Consolas',
         'Dancing Script', 
+        'Dawning of a New Day', 
         'Gloria Hallelujah', 
         'Great Vibes', 
         'Henny Penny', 
+        'Kalam', 
         'Kaushan Script', 
-        'Luckiest Guy',
-        'Lucida Console MS', 
+        'Langar', 
+        'Leckerli One', 
+        'Lobster', 
+        'Lucida Console',
+        'Luckiest Guy', 
+        'Meddon', 
+        'Mogra', 
+        'Monoton', 
+        'Mountains of Christmas', 
         'My Soul', 
+        'Mystery Quest', 
+        'Nova Script', 
         'Oleo Script Swash Caps', 
+        'Oooh Baby', 
+        'Oregano', 
         'Pacifico', 
         'Parisienne', 
+        'Playball', 
         'Poiret One', 
+        'Press Start 2P', 
+        'Rock Salt', 
+        'Rubik Microbe', 
+        'Rubik Moonrocks', 
         'Rubik Puddles', 
         'Sacramento', 
-        'sans-serif',
         'Satisfy', 
+        'Send Flowers', 
         'Shadows Into Light', 
+        'Shizuru', 
+        'Special Elite', 
+        'Square Peg', 
+        'Supermercado One', 
+        'Syne Tactile', 
+        'Times New Roman',
+        'UnifrakturCook', 
+        'Updock', 
         'Vampiro One', 
-        'Yellowtail'
+        'Water Brush', 
+        'Yellowtail', 
+        'Zen Loop'
     ];
     let items = '';
     if(cls.startsWith('.')){
@@ -251,7 +290,7 @@ function additionalText(){
     
     let newInput = document.createElement('input');
     newInput.type = 'text';
-    newInput.value = `Type here... (${textCount})`;
+    newInput.placeholder = `Type here... (${textCount})`;
     newInput.id = `addTextToFrame${textCount}`;
 
     document.getElementById("certificate").appendChild(newInput); 
