@@ -259,12 +259,6 @@ function additionalText(){
     textCount++;
 }
 
-// var onFileSelected = function(event, fileId) {
-//     console.log(fileId);
-//     var image = document.getElementById(`frame${fileId}`);
-//     image.src = URL.createObjectURL(event.target.files[0]);
-// };
-
 function additionalImage(){
     let parent = document.querySelector('.additionalImage');
 
@@ -278,7 +272,7 @@ function additionalImage(){
 
     let inp = document.createElement('input');
     inp.type = 'file';
-    inp.style.paddingTop = '10px';
+    // inp.style.paddingTop = '10px';
     inp.className = 'additional-image';
     inp.placeholder = 'Type text here...';
     inp.id = `ImgPath${imgCount}`;

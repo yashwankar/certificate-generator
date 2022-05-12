@@ -4,7 +4,7 @@
 }
 
 body, html{
-    background-color: #04AA6D;
+    background-color: #181a1b;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
@@ -15,12 +15,21 @@ body, html{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px;
-    background-image: linear-gradient(-60deg, rgba(0, 0, 0, 0), rgb(8, 148, 166) 14%, rgb(73, 20, 167) 28%, rgb(8, 148, 166) 84%, rgba(0, 157, 163, 0));
-    background-color: initial;
+    /* background-image: linear-gradient(-60deg, rgba(0, 0, 0, 0), rgb(8, 148, 166) 14%, rgb(73, 20, 167) 28%, rgb(8, 148, 166) 84%, rgba(0, 157, 163, 0)); */
+    background-color: #04AA6D;
     font-weight: bold;
+    padding: 5px 20px;
 }
+.header .logo{
+    display: flex;
+    font-family: 'YellowTail';
+    font-stretch: extra-expanded;
+    font-size: 25px;
+    cursor: pointer;
+}
+
 .header img{
     width: 50px;
     height: 50px;
@@ -34,15 +43,28 @@ body, html{
     padding: 10px;
     border-color: transparent;
     color: white;
-    font-weight: bold;
+    font-weight: bolder;
     cursor: pointer;
 }
 .header button:hover{
     background-color: rgba(0,0,0,0.2);
 }
+.header-nav{
+    display: flex;
+    gap: 100px;
+}
+.header .icons{
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+}
+.icons img{
+    height: 25px;
+    width: 25px;
+}
 
 .procedure{
-    background-image: linear-gradient(45deg,Blue, lightGreen, lightBlue);
+    background-image: linear-gradient(45deg,lightGreen, #04AA6D, lightGreen);
     border-bottom: 1px solid gray;
     border-top: 1px solid gray;
 }
@@ -64,7 +86,7 @@ body, html{
 }
 .procedure-items li:hover{
     background-color: rgba(0,0,0,0.2);
-    font-style: italic;
+    font-weight: bold;
 }
 
 /* main */
@@ -78,6 +100,7 @@ body, html{
 }
 .left-bar{
     position: relative;
+    color: whitesmoke;
     
 }
 .designs, .personalize, .preview, .download{
@@ -85,6 +108,13 @@ body, html{
     position: absolute;
     width: 100%;
     visibility: hidden;
+}
+.designs li img:hover{
+    border: 4px solid #04AA6D;
+}
+.designs li:hover{
+    padding: 15px;
+    cursor: pointer;
 }
 .next{
     background-color: transparent;
@@ -97,10 +127,11 @@ body, html{
     margin-top: 100px;
 }
 .next:hover{
-    background-color: white;
-    color: black;
-    border-color: black;
-
+    background-color: whitesmoke;
+    color: #04AA6D;
+    border-color: #04AA6D;
+    font-weight: bolder;
+    border-width: 3px;
 }
 
 .perso-items{
@@ -145,9 +176,10 @@ body, html{
 
 /* preview */
 .preview button{
-    padding: 5px;
-    border-radius: 5px;
+    margin: 10px;
 }
+
+
 .additional-text{
     padding: 5px;
     margin: 3px;
@@ -163,7 +195,23 @@ body, html{
 }
 .additional-elements input{
     height: 25px;
-    margin: 5px;
+    width: 50px;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    border-color: gray;
+    margin: 10px;
+}
+.additional-elements input[type='file']{
+    width: auto;
+}
+.additional-elements input[type='file']::-webkit-file-upload-button{
+    background-color: transparent;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding: 2px;
+    border-color: gray;
+    height: 25px;
 }
 
 .additionalText, .additionalImage{
@@ -204,6 +252,7 @@ body, html{
     margin: 10px;
     position: relative;
 }
+
 .frame input{
     position: absolute;
     padding: 10px;
@@ -253,7 +302,7 @@ body, html{
     bottom: 240px;
 }
 #date{
-    left: 180px;
+    left: 210px;
     bottom: 90px;
 }
 
@@ -268,9 +317,17 @@ body, html{
     flex-direction: row;
     justify-content: space-between;
     margin-top: 5px;
-    background-image: linear-gradient(-60deg, rgba(0, 0, 0, 0), rgb(8, 148, 166) 14%, rgb(73, 20, 167) 28%, rgb(8, 148, 166) 84%, rgba(0, 157, 163, 0));
+    background-color: #04AA6D;
+    /* background-image: linear-gradient(-60deg, rgba(0, 0, 0, 0), rgb(8, 148, 166) 14%, rgb(73, 20, 167) 28%, rgb(8, 148, 166) 84%, rgba(0, 157, 163, 0)); */
     font-weight: bold;
+    padding: 2px 10px;
+}
+.footer .icons{
+    display: flex;
+    gap: 10px;
+    padding-top: 2px;
 }
 .footer p{
-    padding:8px;
+    padding-top: 5px;
+    padding-right: 15px;
 }

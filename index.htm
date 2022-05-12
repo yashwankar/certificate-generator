@@ -13,9 +13,19 @@
 </head>
 <body>
     <div class="header">
-        <img src="assets/logo.png" alt="logo">
-        <button onclick="expandProcedureItems(0)">Create</button>
-        <button>Help and Support</button>        
+        <div class="logo">
+            <img src="./assets/favicon.png" alt="">
+            <p> Certificate Generator </p>
+        </div>
+        <div class="header-nav">
+            <button onclick="expandProcedureItems(0)">Create</button>
+            <button>FAQ</button>        
+            <button>About</button> 
+        </div>       
+        <div class="icons">
+            <img src="./assets/icons/help.png" alt="">
+            <img src="./assets/icons/setting.png" alt="">
+        </div>
     </div>
     <div class="procedure">
         <ol class="procedure-items">
@@ -34,19 +44,19 @@
                 <ul class="cert-formats">
                     <li id="des1" onclick="changeCertBg(1)">
                         <img src="./assets/formats/des_1.png" alt="">
-                        <p>1</p>
+                        <p>Standard</p>
                     </li>
                     <li id="des2" onclick="changeCertBg(2)">
                         <img src="./assets/formats/des_2.png" alt="">
-                        <p>2</p>
+                        <p>Dark</p>
                     </li>
                     <li id="des3" onclick="changeCertBg(3)">
                         <img src="./assets/formats/des_3.png" alt="">
-                        <p>3</p>
+                        <p>Vintage</p>
                     </li>
                     <li id="des4" onclick="changeCertBg(4)">
                         <img src="./assets/formats/des_4.png" alt="">
-                        <p>4</p>
+                        <p>Achiever</p>
                     </li>
                 </ul>
                 <button class="next" onclick="expandProcedureItems(1)">Next</button>
@@ -138,8 +148,8 @@
             <div class="preview">
                 <p>Preview</p>
                 <div>
-                    <button id="addText">Add Text</button>
-                    <button id="addImage">Add Image</button>
+                    <button id="addText" class="next">Add Text</button>
+                    <button id="addImage" class="next">Add Image</button>
                 </div>
                 <div class="additionalText"> </div>
                 <div class="additionalImage"> </div>
@@ -158,13 +168,13 @@
         </div>
 
         <div class="certi">
-            Preview
+            Certificate
             <div class="frame" id="certificate">
                 <input type="text" name="" id="hashvalue" placeholder="#" value="ID : 123456">
                 <input type="text" name="" id="title" placeholder="title" value="Certificate">
                 <input type="text" name="" id="action" placeholder="action" value="This is to certify that">
                 <input type="text" name="" id="receiver" placeholder="receiver" value="Myash">
-                <textarea type="textarea" name="" id="reason" placeholder="reason" value="" rows="5" cols="300">has successfully completed the for the skill.</textarea>     
+                <textarea type="textarea" name="" id="reason" placeholder="reason" value="" rows="5" cols="100">has successfully completed the for the skill.</textarea>     
                 <input type="text" name="" id="date" placeholder="date" value="DD-MM-YYYY">
             </div>
         </div>
@@ -172,7 +182,15 @@
     </div>
 
     <div class="footer">
-        <p>Concept and Developer: Yash Wankar </p>
+        <div class="icons">
+            <a href="https://github.com/yashwankar/" target="_blank">
+                <img src="./assets/icons/github-logo.png" alt="">
+            </a>
+            <a href="https://www.linkedin.com/in/yashwankar/" target="_blank">
+                <img src="./assets/icons/linkedin-logo.png" alt="">
+            </a>
+            <p>Yash Wankar </p>
+        </div>
         <p>Certificate Generator 2022 © </p>
     </div>
     <script src="./scripts/mainscript.js"></script>
